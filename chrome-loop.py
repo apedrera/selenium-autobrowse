@@ -6,8 +6,6 @@ import sys
 import json
 
 # USE: python chrome-loop.py config-file.json
-# Note for linux: install chromedriver with "sudo apt install chromium-chromedriver"
-# Note for windows: installl chromedriver following https://www.youtube.com/watch?v=dz59GsdvUF8
 
 # Read config file (filename=fist argument)
 try:
@@ -25,22 +23,7 @@ config = json.loads(config_raw)
 pages_to_browse = config["urls"]
 PROXY = config["proxy"]
 nloops = config["loops"]
-
-# Example of json file:
-# Note: leave proxy empty for no proxy
-# 
-
-#{
-#    "proxy": "",
-#    "loops": 99,
-#    "urls": [
-#        "https://www.hola.com/",
-#        "https://www.hola.com/actualidad/",
-#        "https://www.hola.com/moda/",
-#        "https://www.hola.com/fashion/",
-#        "https://www.hola.com/decoracion/"
-#    ]
-#}
+userAgent = config["user-agent"]
 
 driver_path = "chromedriver"            # chromedriver must be in the path of the OS env variables
 delay = 0.01                            # delay between scroll downs. Default: 0.1
@@ -49,7 +32,7 @@ seconds_after_section = 1               # delay after section page (in seconds).
 zoom = 1.5                              # browser zoom. Default: 1.5
 window_width = int(360*zoom)            # window width. Default: 360
 window_height = int(800*zoom)           # window heigth. Default: 800
-userAgent = "Mozilla/5.0 (Linux; Android 4.2.1; en-us; Nexus 5 Build/JOP40D) AppleWebKit/535.19 (KHTML, like Gecko) Chrome/18.0.1025.166 Mobile Safari/535.19"
+
 # --------------------------------------------------------------------------
 # -------------------- end configuration -----------------------------------
 # --------------------------------------------------------------------------
