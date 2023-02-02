@@ -1,0 +1,13 @@
+{
+    "proxy": "192.168.10.254:3128",
+    "loops": 99,
+    "urls": [
+        "https://mx.hola.com/",
+        "https://mx.hola.com/actualidad/",
+        "https://mx.hola.com/moda/",
+        "https://mx.hola.com/fashion/",
+        "https://mx.hola.com/cocina/",
+        "https://mx.hola.com/viajes/",
+        "https://mx.hola.com/decoracion/"
+    ]
+}

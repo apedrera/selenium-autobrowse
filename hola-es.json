@@ -1,0 +1,13 @@
+{
+    "proxy": "",
+    "loops": 99,
+    "urls": [
+        "https://www.hola.com/",
+        "https://www.hola.com/actualidad/",
+        "https://www.hola.com/moda/",
+        "https://www.hola.com/fashion/",
+        "https://www.hola.com/cocina/",
+        "https://www.hola.com/viajes/",
+        "https://www.hola.com/decoracion/"
+    ]
+}
