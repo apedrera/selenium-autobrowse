@@ -1,8 +1,7 @@
 # selenium-autobrowse
 
 # behaviour
-The script will read the configuration file.
-With the list of URLs
+The script will read the configuration file. With the list of URLs found in the config file:
 
 * Load the URL web page
     
