@@ -6,7 +6,6 @@ import sys
 import json
 
 # USE: python chrome-loop.py config-file.json
-
 # Note for linux: install chromedriver with "sudo apt install chromium-chromedriver"
 # Note for windows: installl chromedriver following https://www.youtube.com/watch?v=dz59GsdvUF8
 
@@ -18,6 +17,7 @@ except:
     print ("Example: python %s config-file.json" % sys.argv[0])
     quit()
 
+# Read json configuration file
 with open(config_file_name) as config_file:
   config_raw = config_file.read()
 config = json.loads(config_raw)
@@ -26,11 +26,21 @@ pages_to_browse = config["urls"]
 PROXY = config["proxy"]
 nloops = config["loops"]
 
-# Proxy: leave empty for no proxy
-# LONDON	192.168.130.5:3128
-# MADRID	192.168.100.254:3128
-# MEXICO	192.168.10.254:3128
-# NEWYORK	192.168.25.254:3128
+# Example of json file:
+# Note: leave proxy empty for no proxy
+# 
+
+#{
+#    "proxy": "",
+#    "loops": 99,
+#    "urls": [
+#        "https://www.hola.com/",
+#        "https://www.hola.com/actualidad/",
+#        "https://www.hola.com/moda/",
+#        "https://www.hola.com/fashion/",
+#        "https://www.hola.com/decoracion/"
+#    ]
+#}
 
 driver_path = "chromedriver"            # chromedriver must be in the path of the OS env variables
 delay = 0.01                            # delay between scroll downs. Default: 0.1
