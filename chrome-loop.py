@@ -53,7 +53,13 @@ browser.set_window_size(window_width,window_height)
 
 # FUNC browse_func ----------------------------------------------------------------
 def browse_func(page):
-    browser.get(page)
+    try:
+        browser.get(page)
+    except:
+        print ("ERROR:", page, " (unable to retrieve page)")
+        time.sleep(10)  # Waiting 10 seconds after retrieving error.
+        exit
+    
     browser.execute_script("document.body.style.zoom = '"+ str(zoom) +"'")
 
     # Click on cookies consent
