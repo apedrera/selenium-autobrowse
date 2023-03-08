@@ -83,6 +83,7 @@ def browse_func(page):
         browser.get(link2)
     except:
         print ("Page:", page, " (article not found)")
+        exit
 
     browser.execute_script("document.body.style.zoom = '"+str(zoom)+"'")
 
